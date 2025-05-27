@@ -151,10 +151,13 @@ a:hover{
     }
 }
 /*changes colour if incorrect input*/
-.incorrect label{
-    background-color: red;
+form div.incorrect label{
+    background-color: #f06272;
 }
 form div.incorrect input{
     /*changes border colour if incorrect input*/
-    border-color: red;
+    border-color: #f06272;
+}
+#error-message{
+    color: #f06272;
 }
