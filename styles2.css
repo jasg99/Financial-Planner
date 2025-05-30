@@ -17,7 +17,7 @@
 html{
     /*change font and size of most text on the page*/
     font-family: Poppins, Segoe UI, sans-serif;
-    font-size: 24pt;
+    font-size: 18pt;
     color: var(--text-color);
     /*align the text on the centre and make it the previously defined text colour*/
     text-align: center;
