@@ -1,0 +1,94 @@
+/*style.css*/
+/*style sheet to style project*/
+/*import font family*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+:root{
+    /*declare colours to use later*/
+    --accent-color: black;
+    --base-color: white;
+    --text-color: #2E2B41;
+    --input-color: #F3F0FF;
+}
+*{
+    /*make margins and padding of website 0 to use space*/
+  margin: 0;
+  padding: 0; 
+}
+html{
+    /*change font and size of most text on the page*/
+    font-family: Poppins, Segoe UI, sans-serif;
+    font-size: 24pt;
+    color: var(--text-color);
+    /*align the text on the centre and make it the previously defined text colour*/
+    text-align: center;
+}
+
+h1{
+    /*aesthetics of heading*/
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase; 
+}
+form{
+    /*aesthetics of form*/
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;  
+}
+form > div{
+    /*aesthetics of each division/section */
+    width: 100%;
+    display: flex;
+    justify-content: center;   
+}
+form label{
+    /*size and colour of images next to each input box*/
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    background-color: var(--accent-color);
+    fill: var(--base-color);
+    color: var(--base-color);
+    border-radius: 10px 0 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+form input{
+    /*size and behaviour of each input box*/
+    box-sizing: border-box;
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--input-color);
+    border-left: none;
+    background-color: var(--input-color);
+    transition: 150ms ease;
+}
+form input:hover{
+    /*when hovering over each input box, border appears*/
+    border-color: var(--accent-color);
+}
+form input:focus{
+    /*when hovering, fill in message  is less aggressive*/
+    outline: none;
+    border-color: var(--text-color);
+}
+div:has(input:focus) > label{
+    /*icon box changes colour when clicked*/
+    background-color: var(--text-color);
+}
+form input::placeholder{
+    /*text inside box*/
+    color: var(--text-color);
+    opacity: 1;
+}

@@ -1,1 +1,56 @@
-<h1>Financial Planner</h1>
+<!--setup html backbone,language etc  -->
+<DOCTYPE html>
+<!--signup page-->
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <!--title-->
+    <title>Financial Planner</title>
+    <!--link to stylesheet to allow customisation-->
+    <link rel="stylesheet" href="styles2.css">
+    <!--link to javascript for actions-->
+    <!--defer allows for JS only to be imported once html has loaded - important bc using html elements in JS-->
+    <script type="text/javascript" src="planner.js" defer></script>
+
+</head>
+<body>
+    <!--start form-->
+     <div>
+     <h2>Financial Planner</h1>
+     <h5>PLease enter your expenses in each input box. If you do not pay one of the expenses, just enter '0'.</h5>
+      <div>
+            <input type="float" name="Electricity" id="ex1-input" placeholder="Electricity">
+        </div>
+      <div>
+            <input type="float" name="Rent" id="ex2-input" placeholder="Rent or Mortage">
+        </div>
+      <div>
+            <input type="float" name="Water" id="ex3-input" placeholder="Water">
+        </div>
+      <div>
+            <input type="float" name="Groceries" id="ex4-input" placeholder="Groceries">
+        </div>
+      <div>
+            <input type="float" name="Fuel" id="ex5-input" placeholder="Fuel">
+        </div>
+      <div>
+            <input type="float" name="Leisure" id="ex6-input" placeholder="Leisure">
+        </div>
+      <div>
+            <input type="float" name="Other" id="ex7-input" placeholder="Other">
+        </div>
+     <p></p>
+     <h5>Please enter your income into the input box. Account for all primary and secondary incomes.</h5>
+     <div>
+            <input type="float" name="Income" id="income-input" placeholder="Income">
+        </div>
+     <p></p>
+     <h5>Please enter your 2 month savings goal into the input box. </h5>
+      <div>
+            <input type="float" name="goal" id="goal-input" placeholder="Goal">
+        </div>
+     <p></p>
+      <h3> You have: </h3>
+
+    </body>
