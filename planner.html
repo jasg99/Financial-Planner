@@ -18,8 +18,12 @@
     <!--start form-->
      <div>
      <h2>Financial Planner</h1>
-     <h5>PLease enter your expenses in each input box. If you do not pay one of the expenses, just enter '0'.</h5>
-      <div>
+        <!--instructions for user-->
+     <h5>Please enter your expenses in each input box. If you do not pay one of the expenses, just enter '0'.</h5>
+    <form id="form">
+        <!--define and give ID for javascript use-->
+     <div>
+         <!--each input is defined as a number, named and given an id-->
             <input type="float" name="Electricity" id="ex1-input" placeholder="Electricity">
         </div>
       <div>
@@ -41,15 +45,19 @@
             <input type="float" name="Other" id="ex7-input" placeholder="Other">
         </div>
      <p></p>
+      <!--income input is defined as number, named and given an id.
+      instructions are also given-->
      <h5>Please enter your income into the input box. Account for all primary and secondary incomes.</h5>
      <div>
             <input type="float" name="Income" id="income-input" placeholder="Income">
         </div>
      <p></p>
-     <h5>Please enter your 6 month savings goal into the input box. </h5>
+     <!--users can input a goal-->
+     <h5>Please enter your savings goal into the input box. </h5>
       <div>
             <input type="float" name="goal" id="goal-input" placeholder="Goal">
         </div>
+    </form>
      <p></p>
      <!--use javascript to create calculation using 6 month goal, and inputs
      get javascript to display this in a special box-->
