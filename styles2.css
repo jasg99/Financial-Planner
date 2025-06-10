@@ -92,3 +92,25 @@ form input::placeholder{
     color: var(--text-color);
     opacity: 1;
 }
+form button{
+    /*stylistic features of the button*/
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--accent-color);
+    color: var(--base-color);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+form button:hover{
+    /*colour changes when hovering over button*/
+    background-color: var(--text-color);
+}
+form button:focus{
+    outline: none;
+    background-color: var(--text-color); 
+}
