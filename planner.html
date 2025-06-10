@@ -19,7 +19,7 @@
      <div>
      <h2>Financial Planner</h1>
         <!--instructions for user-->
-     <h5>Please enter your expenses in each input box. If you do not pay one of the expenses, just enter '0'.</h5>
+     <h5>Please enter your weekly expenses in each input box. If you do not pay one of the expenses, just enter '0'.</h5>
     <form id="form">
         <!--define and give ID for javascript use-->
      <div>
@@ -47,7 +47,7 @@
      <p></p>
       <!--income input is defined as number, named and given an id.
       instructions are also given-->
-     <h5>Please enter your income into the input box. Account for all primary and secondary incomes.</h5>
+     <h5>Please enter your approximate weekly income into the input box. Account for all primary and secondary incomes.</h5>
      <div>
             <input type="float" name="Income" id="income-input" placeholder="Income">
         </div>
@@ -57,13 +57,17 @@
       <div>
             <input type="float" name="goal" id="goal-input" placeholder="Goal">
         </div>
+        <form>
+            <button type = "button" onclick="performCalculation()">Calculate</button>
+            </form>
     </form>
+    
      <p></p>
      <!--use javascript to create calculation using 6 month goal, and inputs
      get javascript to display this in a special box-->
       <h3> You have: </h3>
-         <!--display number-->
-     <h3> days until you will reach your goal!</h3>
+         <div id = "result"></div>
+     <h3> until you will reach your goal!</h3>
      <!--find way to save data to program so user can come back and edit their inputs
      and also view how many days they have left until done -->
      <!--possibly use submit button and new page or submit to show data and then edit button?-->
