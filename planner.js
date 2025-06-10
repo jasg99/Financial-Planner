@@ -25,6 +25,22 @@ function performCalculation() {
     const pDay = pWeek / dayWeek;
     //goal amount divided by savings per day = no. days til saved
     const numDays = goal / pDay;
-    
-    document.getElementById('result').innerText = numDays + " Days";
-}
+    if (numDays > 0) {
+     document.getElementById('ex1').innerText = "Electricity: $" + ex1;
+     document.getElementById('ex2').innerText = "Rent: $" + ex2;
+     document.getElementById('ex3').innerText = "Water: $" + ex3;
+     document.getElementById('ex4').innerText = "Groceries: $" + ex4;
+     document.getElementById('ex5').innerText = "Fuel: $" + ex5;
+     document.getElementById('ex6').innerText ="Leisure: $" + ex6;
+     document.getElementById('ex7').innerText = "Other: $" + ex7;
+     document.getElementById('inc').innerText = "$" + inc;
+     document.getElementById('goal').innerText = "$" + goal;
+
+     document.getElementById('result').innerText = "You have: " + numDays + " Days until you reach your goal!";
+     document.getElementById('message').innerText = "Keep saving! You've got this!"
+    } else {
+     document.getElementById('result').innerText = "...";
+     document.getElementById('message').innerText = "Uh oh! looks like you've entered something wrong. Please make sure your income is larger than your expenses, and all the information you have entered is numerical.";
+    }
+
+ }

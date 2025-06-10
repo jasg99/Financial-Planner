@@ -58,16 +58,49 @@
             <input type="float" name="goal" id="goal-input" placeholder="Goal">
         </div>
         <form>
-            <button type = "button" onclick="performCalculation()">Calculate</button>
+            <!--make button to create the calculation-->
+            <h6>Please scroll down to view your results once calculated. </h6>
+           <button type="button" onclick="performCalculation()">Calculate</button>
             </form>
-    </form>
+           
+        </form>
     
      <p></p>
-     <!--use javascript to create calculation using 6 month goal, and inputs
-     get javascript to display this in a special box-->
-      <h3> You have: </h3>
-         <div id = "result"></div>
-     <h3> until you will reach your goal!</h3>
+     <img src="money.jpg" alt="Money">
+     
+     <!-- javascript to create calculation using goal, and inputs
+     display + message bellow-->
+       <h2>Results</h2>
+    <div>
+        <h5>Your Expenses</h5>
+        <div id = "ex1"></div>
+        <div id = "ex2"></div>
+        <div id = "ex3"></div>
+        <div id = "ex4"></div>
+        <div id = "ex5"></div>
+        <div id = "ex6"></div>
+        <div id = "ex7"></div>
+    </div>
+     
+    <div>
+        <h5>Your Income</h5>
+        <div id = "inc"></div>
+    </div>
+    <div>
+        <h5>Your Goal</h5>
+        <div id = "goal"></div>
+    </div>
+ 
+   <!-- javascript to create calculation using goal, and inputs
+     display + message bellow-->
+      <h3>Calculation</h3>
+     <div id = "result"></div>
+     <div id ="message"></div>
+     
+         <!--find way to save data to program so user can come back and edit their inputs
+     and also view how many days they have left until done -->
+         <!--possibly use submit button and new page or submit to show data and then edit button?-->
+     
      <!--find way to save data to program so user can come back and edit their inputs
      and also view how many days they have left until done -->
      <!--possibly use submit button and new page or submit to show data and then edit button?-->
