@@ -81,32 +81,50 @@ function getSignupFormErrors(firstname, email, password, repeatPassword){
     return errors;
 }
 
-//login page validation
-function getLoginFormErrors(email, password){
-    let errors = []
-    if(email === '' || email == null){
-        //error message popup
-       errors.push('Email is required')
-       email_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
-    }
-    if(password=== '' || password == null){
-       //error message popup
-       errors.push('Password is required')
-       password_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
-    }
-    return errors;
-}
 
-const allInputs = [firstname_input, email_input, password_input, repeat_password_input].filter(input => input != null)
-//undo red outline if fixed
-allInputs.forEach(input => {
-    input.addEventListener('input', () => {
-        if(input.parentElement.classList.contains('incorrect')){
-            input.parentElement.classList.remove('incorrect')
-            error_message.innerText = ''
-        }
-    })
-})
+   document.addEventListener('DOMContentLoaded', () => {
 
-//use api for authentication
-//use bcrypt to encrypt password in saved
+     // Form submission handler
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Get the entered firstname
+        const firstnameInput = document.getElementById('firstname-input').value;
+
+        // Save thefirstname in localStorage
+        localStorage.setItem('firstname-input', firstnameInput);
+      })
+       const savedEmail = localStorage.getItem('email');
+       const message = document.getElementById('message');
+
+      if (savedEmail) {
+        message.textContent = "Email is already registered to an account. Please Log in.";
+      }
+
+      // Form submission handler
+      
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Get the entered email
+        const emailInput = document.getElementById('email-input').value;
+
+        // Save the email in localStorage
+        localStorage.setItem('email-input', emailInput);
+        })
+        form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form from refreshing the page
+
+        // Get the entered password
+        const passwordInput = document.getElementById('password-input').value;
+
+        // Save thefirstname in localStorage
+        localStorage.setItem('password-input', passwordInput);
+          
+      
+        });
+      });
+      
+
+  
