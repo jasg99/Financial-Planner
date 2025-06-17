@@ -32,27 +32,26 @@ allInputs.forEach(input => {
     })
 })
 
-function returnToPreviousPage() {
-    window.history.back();
-}
+
 function validateForm()
-{
+{//attempt to use LocalStorage to verify user login 
     document.addEventListener('DOMContentLoaded', () => {
          // Check if a username is already saved and display it
+        const enterEmail = document.getElementById('emaillog-input');
+        const enterPass = document.getElementById('passwordlog-input');
         const savedEmail= localStorage.getItem('email-input');
-        const savedPassword = localStorage.getItem('password-input')
+        const savedPassword = localStorage.getItem('password-input');
         const verify = document.getElementById('verify');
         const form = document.getElementById('form2');
-        form.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent form from refreshing the page
-         if (savedEmail) {
+        form.addEventListener('submit', function(formaction) {
+            formaction.preventDefault(); // Prevent form from refreshing the page
+         if (enterEmail = savedEmail) {
             return true;
         }
-        if (savedPassword) {
+        if (enterPass= savedPassword) {
             return true;
         }
-        verify.innerText = 'Invalid Login.'
-        returnTopreviousPage();
+        verify.innerText = 'Incorrect Login'
         return false;
      
         });

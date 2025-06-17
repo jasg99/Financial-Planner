@@ -81,13 +81,13 @@ function getSignupFormErrors(firstname, email, password, repeatPassword){
     return errors;
 }
 
-
+function saveData(){
    document.addEventListener('DOMContentLoaded', () => {
 
      // Form submission handler
       const form = document.getElementById('form');
       form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+        
 
         // Get the entered firstname
         const firstnameInput = document.getElementById('firstname-input').value;
@@ -103,28 +103,28 @@ function getSignupFormErrors(firstname, email, password, repeatPassword){
       }
 
       // Form submission handler
-      
-      form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
+     
+       form.addEventListener('submit', function(formaction) {
+        
+         // Get the entered email
+         const emailInput = document.getElementById('email-input').value;
 
-        // Get the entered email
-        const emailInput = document.getElementById('email-input').value;
+         // Save the email in localStorage
+         localStorage.setItem('email-input', emailInput);
+         })
+          form.addEventListener('submit', function(formaction) {
+         // Prevent form from refreshing the page
+          
+         // Get the entered password
+         const passwordInput = document.getElementById('password-input').value;
 
-        // Save the email in localStorage
-        localStorage.setItem('email-input', emailInput);
-        })
-        form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form from refreshing the page
-
-        // Get the entered password
-        const passwordInput = document.getElementById('password-input').value;
-
-        // Save thefirstname in localStorage
-        localStorage.setItem('password-input', passwordInput);
+         // Save thefirstname in localStorage
+         localStorage.setItem('password-input', passwordInput);
           
       
         });
       });
+    }
       
 
   
