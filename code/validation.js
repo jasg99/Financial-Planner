@@ -4,11 +4,17 @@ const form = document.getElementById('form')
 //grabs elements and data from html form using id
 const firstname_input = document.getElementById('firstname-input')
 const email_input = document.getElementById('email-input')
-const password_input = document.getElementById('password-input')
+const password_input = document.getElementsById('password-input');
 const repeat_password_input = document.getElementById('repeat-password-input')
 const error_message = document.getElementById('error-message')
 //form submits at pressing enter or clicking 
-const alphanumeric = 
+
+//grabs elements and data from html form using id
+
+
+
+
+
 form.addEventListener('submit', (e) => {
    //error listing to allow definiton of incorrect input to use to prevent submission
    let errors = []
@@ -29,6 +35,32 @@ form.addEventListener('submit', (e) => {
    }
 })
 
+//login page validation
+function getLoginFormErrors(email, password){
+    let errors = []
+    if(email === '' || email == null || email !== 'Admin@gmail'){
+        //error message popup
+       errors.push('Email is invalid')
+       email_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
+    }
+    if(password=== '' || password == null || password !== 'zebra1234' ){
+       //error message popup
+       errors.push('Password is invalid')
+       password_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
+    }
+     return errors;
+}
+
+const allInputs = [ email_input, password_input].filter(input => input != null)
+//undo red outline if fixed
+allInputs.forEach(input => {
+    input.addEventListener('input', () => {
+        if(input.parentElement.classList.contains('incorrect')){
+            input.parentElement.classList.remove('incorrect')
+            error_message.innerText = ''
+        }
+    })
+})
  // Function to check if a string is alphanumeric
 function isAlphaNumeric(str) {
   // Using regular expression to check for alphanumeric characters
@@ -81,50 +113,49 @@ function getSignupFormErrors(firstname, email, password, repeatPassword){
     return errors;
 }
 
-function saveData(){
-   document.addEventListener('DOMContentLoaded', () => {
 
-     // Form submission handler
-      const form = document.getElementById('form');
-      form.addEventListener('submit', function(event) {
-        
 
-        // Get the entered firstname
-        const firstnameInput = document.getElementById('firstname-input').value;
 
-        // Save thefirstname in localStorage
-        localStorage.setItem('firstname-input', firstnameInput);
-      })
-       const savedEmail = localStorage.getItem('email');
-       const message = document.getElementById('message');
 
-      if (savedEmail) {
-        message.textContent = "Email is already registered to an account. Please Log in.";
-      }
+//attempt to register users
+/*const express = require('express');
+const fs = require('fs');
+const bodyParser = require('body-parser');
+const bcrypt = require('bcrypt');
+const app = express();
+const PORT = 3000;
 
-      // Form submission handler
-     
-       form.addEventListener('submit', function(formaction) {
-        
-         // Get the entered email
-         const emailInput = document.getElementById('email-input').value;
+async function register() {
+  const email = document.getElementById('email-input').value;
+  const password = document.getElementById('password-input').value;
 
-         // Save the email in localStorage
-         localStorage.setItem('email-input', emailInput);
-         })
-          form.addEventListener('submit', function(formaction) {
-         // Prevent form from refreshing the page
-          
-         // Get the entered password
-         const passwordInput = document.getElementById('password-input').value;
+  const res = await fetch('/register', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
 
-         // Save thefirstname in localStorage
-         localStorage.setItem('password-input', passwordInput);
-          
-      
-        });
-      });
-    }
-      
+  const data = await res.json();
+  document.getElementById('verify').textContent = data.message;
+}
 
+async function logincheck() {
+  const email = document.getElementById('email-input').value;
+  const password = document.getElementById('password-input').value;
   
+  const res = await fetch('/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+  });
+
+  const data = await res.json();
+  if (res.ok) {
+    document.getElementById('message').textContent = '✅ ' + data.message;
+    
+  } else {
+    document.getElementById('message').textContent = '❌ ' + data.message;
+    
+  }
+}*/
+//unfortunately did not get to work. 
