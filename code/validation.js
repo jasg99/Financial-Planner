@@ -4,7 +4,7 @@ const form = document.getElementById('form')
 //grabs elements and data from html form using id
 const firstname_input = document.getElementById('firstname-input')
 const email_input = document.getElementById('email-input')
-const password_input = document.getElementsById('password-input');
+const password_input = document.getElementsById('password-input')
 const repeat_password_input = document.getElementById('repeat-password-input')
 const error_message = document.getElementById('error-message')
 //form submits at pressing enter or clicking 
@@ -19,13 +19,13 @@ form.addEventListener('submit', (e) => {
    //error listing to allow definiton of incorrect input to use to prevent submission
    let errors = []
     //if statements allow this form to be used for both login and signup page
-        if(firstname_input){
+   if(firstname_input){
           //if there is a firstname input then the user is in the signup page
-         errors = getSignupFormErrors(firstname_input.value, email_input.value, password_input.value, repeat_password_input.value)
+      errors = getSignupFormErrors(firstname_input.value, email_input.value, password_input.value, repeat_password_input.value)
         }
-        else{
+   else{
             //if no firstname input then it must be the login form
-             errors = getLoginFormErrors(email_input.value, password_input.value)
+      errors = getLoginFormErrors(email_input.value, password_input.value)
         }
 
    if(errors.length > 0){
@@ -36,19 +36,19 @@ form.addEventListener('submit', (e) => {
 })
 
 //login page validation
-function getLoginFormErrors(email, password){
-    let errors = []
-    if(email === '' || email == null || email !== 'Admin@gmail'){
+function getLoginFormErrors(email_input, password_input){
+  let errors = []
+  if(email_input === '' || email_input == null || email_input !== 'Admin@gmail'){
         //error message popup
        errors.push('Email is invalid')
        email_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
     }
-    if(password=== '' || password == null || password !== 'zebra1234' ){
+  if(password_input=== '' || password_input == null || password_input !== 'zebra1234' ){
        //error message popup
        errors.push('Password is invalid')
        password_input.parentElement.classList.add('incorrect') //adds incorrect feature for CSS
     }
-     return errors;
+  return errors;
 }
 
 const allInputs = [ email_input, password_input].filter(input => input != null)
